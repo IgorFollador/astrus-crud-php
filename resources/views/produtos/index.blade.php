@@ -6,7 +6,6 @@
         <thead>
             <th>Nome</th>
             <th>Descrição</th>
-            <th>Categoria</th>
             <th>Ações</th>
         </thead>
 
@@ -15,7 +14,6 @@
                 <tr>
                     <td>{{ $produto->nmProduto }}</td>
                     <td>{{ $produto->dsProduto }}</td>
-                    <td>{{ isset($produto->categoria->dsCategoria) ? $produto->categoria->dsCategoria : "Categoria não informada" }}</td>
                     <td>
                         <a href="{{ route('produtos.edit', ['id'=>$produto->id]) }}" class="btn-sm btn-success">Editar</a>
                         <a href="#" onclick="return ConfirmaExclusao({{$produto->id}})" class="btn-sm btn-danger">Remover</a>
