@@ -14,8 +14,8 @@
     {!! Form::open(['route'=>'categorias.store']) !!}
         
         <div class="form-group">
-            {!! Form::label('descricao', 'Descrição:') !!}
-            {!! Form::text('descricao', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::label('dsCategoria', 'Descrição:') !!}
+            {!! Form::text('dsCategoria', null, ['class'=>'form-control', 'required']) !!}
         </div>
         
         <div class="form-group">

@@ -11,7 +11,7 @@
         <tbody>
             @foreach($categorias as $categoria)
                 <tr>
-                    <td>{{ $categoria->descricao }}</td>
+                    <td>{{ $categoria->dsCategoria }}</td>
                     <td>
                         <a href="{{ route('categorias.edit', ['id'=>$categoria->id]) }}" class="btn-sm btn-success">Editar</a>
                         <a href="#" onclick="return ConfirmaExclusao({{$categoria->id}})" class="btn-sm btn-danger">Remover</a>

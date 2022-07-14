@@ -14,8 +14,8 @@
     {!! Form::open(['route'=>['categorias.update', 'id'=>$categoria->id], 'method'=>'put']) !!}
         
         <div class="form-group">
-            {!! Form::label('descricao', 'Descrição:') !!}
-            {!! Form::text('descricao', $categoria->descricao, ['class'=>'form-control', 'required']) !!}
+            {!! Form::label('dsCategoria', 'Descrição:') !!}
+            {!! Form::text('dsCategoria', $categoria->dsCategoria, ['class'=>'form-control', 'required']) !!}
         </div>
         
         <div class="form-group">
