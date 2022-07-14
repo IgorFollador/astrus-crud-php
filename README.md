@@ -2,6 +2,7 @@
 
 ![Laravel](https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white)![mysql](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
+> This repository is dedicated to the admission test for the company Astrus Digital, involving a simple CRUD of products using PHP + Laravel language and MySQL database
 
 ## 💻 Requirements
 
