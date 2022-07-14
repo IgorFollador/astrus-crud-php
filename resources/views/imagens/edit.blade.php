@@ -11,7 +11,7 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>['imagens.update', 'id'=>$imagem->id], 'method'=>'put'], 'enctype'=>'multipart/form-data'])) !!}
+    {!! Form::open(['route'=>['imagens.update', 'id'=>$imagem->id], 'method'=>'put', 'enctype'=>'multipart/form-data']) !!}
         
         <div class="form-group">
             {!! Form::label('image', 'Arquivo:') !!}

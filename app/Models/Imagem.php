@@ -9,7 +9,9 @@ class Imagem extends Model
 {
     use HasFactory;
     protected $table = "imagens";
-    protected $fillable = ['dsImagem', 'nomeDoArquivo'];
+    protected $fillable = ['dsImagem', 'nomeDoArquivo', 'idProduto'];
+
+    public $timestamps = false;
 
     public function produto() {
         return $this->belongsTo("App\Models\Produto");

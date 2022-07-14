@@ -9,7 +9,9 @@ class Produto extends Model
 {
     use HasFactory;
     protected $table = "produtos";
-    protected $fillable = ['nmProduto', 'dsProduto'];
+    protected $fillable = ['nmProduto', 'dsProduto', 'idCategoria'];
+
+    public $timestamps = false;
 
     public function categoria() {
         return $this->belongsTo("App\Models\Categoria");

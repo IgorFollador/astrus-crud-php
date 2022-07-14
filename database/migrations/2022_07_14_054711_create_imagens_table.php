@@ -20,7 +20,7 @@ class CreateImagensTable extends Migration
         
             $table->bigInteger('idProduto')->unsigned()->nullable();
             $table->foreign('idProduto')->references('id')->on('Produtos');
-            $table->timestamps();
+            // $table->timestamps();
         });
     }
 
