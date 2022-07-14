@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Imagem extends Model
 {
     use HasFactory;
-    protected $table = "imagens";
+    protected $table = "imagem";
     protected $fillable = ['dsImagem', 'nomeDoArquivo', 'idProduto'];
 
     public $timestamps = false;

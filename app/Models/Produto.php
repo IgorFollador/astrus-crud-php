@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Produto extends Model
 {
     use HasFactory;
-    protected $table = "produtos";
+    protected $table = "produto";
     protected $fillable = ['nmProduto', 'dsProduto', 'idCategoria'];
 
     public $timestamps = false;

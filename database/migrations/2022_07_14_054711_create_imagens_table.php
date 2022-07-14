@@ -13,13 +13,13 @@ class CreateImagensTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagens', function (Blueprint $table) {
+        Schema::create('imagem', function (Blueprint $table) {
             $table->id();
             $table->string('dsImagem', 255);
             $table->string('nomeDoArquivo', 120)->unique();
         
             $table->bigInteger('idProduto')->unsigned()->nullable();
-            $table->foreign('idProduto')->references('id')->on('Produtos');
+            $table->foreign('idProduto')->references('id')->on('Produto');
             // $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateImagensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imagens');
+        Schema::dropIfExists('imagem');
     }
 }

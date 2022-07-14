@@ -13,9 +13,9 @@ class AddIdCategoriaToProdutos extends Migration
      */
     public function up()
     {
-        Schema::table('produtos', function (Blueprint $table) {
+        Schema::table('produto', function (Blueprint $table) {
             $table->bigInteger('idCategoria')->unsigned()->nullable();
-            $table->foreign('idCategoria')->references('id')->on('categorias');
+            $table->foreign('idCategoria')->references('id')->on('categoria');
         });
     }
 
@@ -26,8 +26,8 @@ class AddIdCategoriaToProdutos extends Migration
      */
     public function down()
     {
-        Schema::table('produtos', function (Blueprint $table) {
-            $table->dropIndex('produtos_id_categoria_foreign');
+        Schema::table('produto', function (Blueprint $table) {
+            $table->dropIndex('produto_id_categoria_foreign');
         });
     }
 }
