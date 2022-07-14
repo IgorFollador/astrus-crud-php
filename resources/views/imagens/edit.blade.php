@@ -15,12 +15,12 @@
         
         <div class="form-group">
             {!! Form::label('image', 'Arquivo:') !!}
-            {!! Form::file('image', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::file('image', null, ['class'=>'form-control']) !!}
         </div>
 
         <div class="form-group">
             {!! Form::label('nomeDoArquivo', 'Nome do arquivo:') !!}
-            {!! Form::text('nomeDoArquivo', $imagem->nomeDoArquivo, ['class'=>'form-control', 'required']) !!}
+            {!! Form::text('nomeDoArquivo', substr($imagem->nomeDoArquivo, 0, -5), ['class'=>'form-control', 'required']) !!}
         </div>
 
         <div class="form-group">
