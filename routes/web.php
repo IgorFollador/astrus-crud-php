@@ -28,3 +28,12 @@ Route::group(['prefix'=>'produtos', 'where'=>['id'=>'[0-9]+']], function() {
     Route::put('{id}/update',      ['as'=>'produtos.update',     'uses'=>'\App\Http\Controllers\ProdutoController@update']);
     Route::post('store',           ['as'=>'produtos.store',      'uses'=>'\App\Http\Controllers\ProdutoController@store']);
 });
+
+Route::group(['prefix'=>'imagens', 'where'=>['id'=>'[0-9]+']], function() {
+    Route::get('',                 ['as'=>'imagens',            'uses'=>'\App\Http\Controllers\ImagemController@index']);
+    Route::get('create',           ['as'=>'imagens.create',     'uses'=>'\App\Http\Controllers\ImagemController@create']);
+    Route::get('{id}/destroy',     ['as'=>'imagens.destroy',    'uses'=>'\App\Http\Controllers\ImagemController@destroy']);
+    Route::get('{id}/edit',        ['as'=>'imagens.edit',       'uses'=>'\App\Http\Controllers\ImagemController@edit']);
+    Route::put('{id}/update',      ['as'=>'imagens.update',     'uses'=>'\App\Http\Controllers\ImagemController@update']);
+    Route::post('store',           ['as'=>'imagens.store',      'uses'=>'\App\Http\Controllers\ImagemController@store']);
+});

@@ -236,6 +236,11 @@ return [
             'url'  => 'categorias',
             'icon' => 'fas fa-fw fa-tags',
         ],
+        [
+            'text' => 'Imagens',
+            'url'  => 'imagens',
+            'icon' => 'fas fa-fw fa-file-image',
+        ],
     ],
 
     /*
