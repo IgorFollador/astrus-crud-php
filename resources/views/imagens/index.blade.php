@@ -4,6 +4,7 @@
     <h1>Imagens</h1>
     <table class="table table-stripe table-bordered table-hover">
         <thead>
+            <th>Imagem</th>
             <th>Nome do arquivo</th>
             <th>Descrição</th>
             <th>Produto</th>
@@ -13,6 +14,7 @@
         <tbody>
             @foreach($imagens as $imagem)
                 <tr>
+                    <td><img src="{{ url('Images/'.$imagem->nomeDoArquivo) }}" style="height: 100px; width: 150px;"></td>
                     <td>{{ $imagem->nomeDoArquivo }}</td>
                     <td>{{ $imagem->dsImagem }}</td>
                     <td>{{ isset($imagem->produto->nmProduto) ? $imagem->produto->nmProduto : "Produto não encontrado" }}</td>

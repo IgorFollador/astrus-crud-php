@@ -11,8 +11,13 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>['imagens.update', 'id'=>$imagem->id], 'method'=>'put']) !!}
+    {!! Form::open(['route'=>['imagens.update', 'id'=>$imagem->id], 'method'=>'put'], 'enctype'=>'multipart/form-data'])) !!}
         
+        <div class="form-group">
+            {!! Form::label('image', 'Arquivo:') !!}
+            {!! Form::file('image', null, ['class'=>'form-control', 'required']) !!}
+        </div>
+
         <div class="form-group">
             {!! Form::label('nomeDoArquivo', 'Nome do arquivo:') !!}
             {!! Form::text('nomeDoArquivo', $imagem->nomeDoArquivo, ['class'=>'form-control', 'required']) !!}

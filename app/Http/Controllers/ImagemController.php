@@ -19,9 +19,20 @@ class ImagemController extends Controller
         return view('imagens.create');
     }
 
-    public function store(ImagemRequest $request)
+    public function store(Request $request)
     {
-        $nova_imagem = $request->all();
+        $nomeDoArquivo = $request->input('nomeDoArquivo').'.jpeg';
+        $nova_imagem = ([
+            'dsImagem' => $request->input('dsImagem'),
+            'nomeDoArquivo' => $nomeDoArquivo,
+            'idProduto' => $request->input('idProduto'),
+        ]);
+
+        if ($request->hasFile('image')) {
+            $request->file('image')->move(public_path('./Images'), $nomeDoArquivo);
+        }
+        
+        
         Imagem::create($nova_imagem);
 
         return redirect()->route('imagens');
@@ -30,6 +41,8 @@ class ImagemController extends Controller
     public function destroy($id)
     {
         try {
+            // $imagem = Imagem::find($id);
+            // File::delete(public_path('./Images'.$imagem->nomeDoArquivo));
             Imagem::find($id)->delete();
             $ret = array('status' => 200, 'msg' => "null");
         } catch (\Illuminate\Database\QueryException $e) {
@@ -42,13 +55,24 @@ class ImagemController extends Controller
 
     public function edit($id)
     {
-        $produto = Imagem::find($id);
-        return view('imagens.edit', compact('produto'));
+        $imagem = Imagem::find($id);
+        return view('imagens.edit', compact('imagem'));
     }
 
     public function update(ImagemRequest $request, $id)
     {
-        Imagem::find($id)->update($request->all());
+        $nomeDoArquivo = $request->input('nomeDoArquivo').'.jpeg';
+        $update_imagem = ([
+            'dsImagem' => $request->input('dsImagem'),
+            'nomeDoArquivo' => $nomeDoArquivo,
+            'idProduto' => $request->input('idProduto'),
+        ]);
+
+        if ($request->hasFile('image')) {
+            $request->file('image')->move(public_path('./Images'), $nomeDoArquivo);
+        }
+
+        Imagem::find($id)->update($update_imagem);
         return redirect()->route('imagens');;
     }
 }

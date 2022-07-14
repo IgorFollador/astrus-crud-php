@@ -11,11 +11,11 @@
         </ul>
     @endif
 
-    {!! Form::open(['route'=>'imagens.store']) !!}
+    {!! Form::open(['route'=>'imagens.store', 'enctype'=>'multipart/form-data']) !!}
 
         <div class="form-group">
-            {!! Form::label('imageFile', 'Arquivo:') !!}
-            {!! Form::file('imageFile', null, ['class'=>'form-control', 'required']) !!}
+            {!! Form::label('image', 'Arquivo:') !!}
+            {!! Form::file('image', null, ['class'=>'form-control', 'required']) !!}
         </div>
         
         <div class="form-group">

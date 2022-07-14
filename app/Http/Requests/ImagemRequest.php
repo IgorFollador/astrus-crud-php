@@ -24,6 +24,7 @@ class ImagemRequest extends FormRequest
     public function rules()
     {
         return [
+            'image' => 'required|mimes:jpg,png,jpeg|max:10240',
             'nomeDoArquivo' => 'required|max:120',
             'dsImagem' => 'max:255',
             'idProduto' => 'required'
